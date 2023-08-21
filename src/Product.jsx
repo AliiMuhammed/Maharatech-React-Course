@@ -15,9 +15,9 @@ class Product extends Component {
   }
 
   // rebind this
-  clickedHandler = () => {
+  clickedHandler = (num) => {
     this.setState({
-      count: this.state.count + 1,
+      count: this.state.count + num,
     });
   };
 
@@ -47,7 +47,7 @@ class Product extends Component {
         <span>{this.state.name}</span>
         <span className={this.getClasses()}>{this.state.count}</span>
         <button
-          onClick={this.clickedHandler}
+          onClick={() => this.clickedHandler(2)}
           className="btn btn-primary btn-sm"
         >
           +
