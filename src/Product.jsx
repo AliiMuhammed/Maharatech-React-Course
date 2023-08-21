@@ -1,9 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+
+
+
 class Product extends Component {
-    state = {  } 
-    render() { 
-        return (<span>product 1</span>);
-    }
+  state = {
+    name:"Burger",
+    count:3,
+  };
+  render() {
+    return (
+      <>
+        <span>{this.state.name}</span>
+        <span className="badge badge-success m-2">{this.state.count}</span>
+      </>
+    );
+  }
 }
- 
+
 export default Product;
