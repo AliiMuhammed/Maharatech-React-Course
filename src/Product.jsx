@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Product extends Component {
   state = {
     name: "Burger",
-    count: 0,
+    count: 3,
     img: "logo192.png",
     names: ["Ahmed", "osama", "ali"],
   };
@@ -13,6 +13,13 @@ class Product extends Component {
       ? "badge badge-warning m2"
       : "badge badge-primary m2";
   }
+
+  // rebind this
+  clickedHandler = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
 
   render() {
     // const styles = {
@@ -36,13 +43,21 @@ class Product extends Component {
       <>
         {/* <img src={this.state.img} alt="" /> */}
         {/* <span style={{ color: "red" }}>{this.state.name}</span> */}
-        {/* <span>{this.state.name}</span>
-        <span className={this.getClasses()}>{this.state.count}</span> */}
-        <ul>
+
+        <span>{this.state.name}</span>
+        <span className={this.getClasses()}>{this.state.count}</span>
+        <button
+          onClick={this.clickedHandler}
+          className="btn btn-primary btn-sm"
+        >
+          +
+        </button>
+
+        {/* <ul>
           {this.state.names.map((name) => {
             return <li key={name}>{name}</li>;
           })}
-        </ul>
+        </ul> */}
       </>
     );
   }
