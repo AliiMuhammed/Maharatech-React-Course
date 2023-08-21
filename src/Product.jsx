@@ -5,6 +5,7 @@ class Product extends Component {
     name: "Burger",
     count: 0,
     img: "logo192.png",
+    names: ["Ahmed", "osama", "ali"],
   };
 
   getClasses() {
@@ -13,10 +14,7 @@ class Product extends Component {
       : "badge badge-primary m2";
   }
 
-
   render() {
-
-
     // const styles = {
     //   color: "red",
     // };
@@ -34,13 +32,17 @@ class Product extends Component {
     //     ? "badge badge-warning m2"
     //     : "badge badge-primary m2";
 
-
     return (
       <>
         {/* <img src={this.state.img} alt="" /> */}
         {/* <span style={{ color: "red" }}>{this.state.name}</span> */}
-        <span>{this.state.name}</span>
-        <span className={this.getClasses()}>{this.state.count}</span>
+        {/* <span>{this.state.name}</span>
+        <span className={this.getClasses()}>{this.state.count}</span> */}
+        <ul>
+          {this.state.names.map((name) => {
+            return <li key={name}>{name}</li>;
+          })}
+        </ul>
       </>
     );
   }
