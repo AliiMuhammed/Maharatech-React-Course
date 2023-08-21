@@ -1,19 +1,46 @@
 import React, { Component } from "react";
 
-
-
 class Product extends Component {
   state = {
-    name:"Burger",
-    count:3,
-    img:"logo192.png"
+    name: "Burger",
+    count: 0,
+    img: "logo192.png",
   };
+
+  getClasses() {
+    return this.state.count === 0
+      ? "badge badge-warning m2"
+      : "badge badge-primary m2";
+  }
+
+
   render() {
+
+
+    // const styles = {
+    //   color: "red",
+    // };
+
+    // let classes
+    // if (this.state.count === 0) {
+    //    classes = "badge badge-warning m2";
+    // }
+    // else{
+    //    classes = "badge badge-primary m2";
+    // }
+
+    // const classes =
+    //   this.state.count === 0
+    //     ? "badge badge-warning m2"
+    //     : "badge badge-primary m2";
+
+
     return (
       <>
-      <img src={this.state.img} alt="" />
+        {/* <img src={this.state.img} alt="" /> */}
+        {/* <span style={{ color: "red" }}>{this.state.name}</span> */}
         <span>{this.state.name}</span>
-        <span className="badge badge-success m-2">{this.state.count}</span>
+        <span className={this.getClasses()}>{this.state.count}</span>
       </>
     );
   }
